@@ -14,9 +14,9 @@
                         expand_more
                     </span>
                 </button>
-                <ul class="hidden pl-8 bg-gray-50">
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-blue-100">item1</a>
+                <ul class="{{ request()->routeIs('home') || request()->routeIs('home') ? '' : 'hidden' }} pl-8 bg-gray-50">
+                    <li class="{{ request()->routeIs('home') ? 'bg-blue-100' : '' }}">
+                        <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-blue-100">Overview</a>
                     </li>
                 </ul>
             </li>
@@ -31,12 +31,12 @@
                         expand_more
                     </span>
                 </button>
-                <ul class="hidden pl-8 bg-gray-50">
+                <ul class="{{ request()->routeIs('partner.inquire') || request()->routeIs('transaction.history') ? '' : 'hidden' }} pl-8 bg-gray-50">
                     <li>    
-                        <a href="#" class="block px-4 py-2 hover:bg-blue-100">Business Partner Inquire</a>
+                        <a href="{{route('partner.inquire')}}" class="block px-4 py-2 hover:bg-blue-100 {{ request()->routeIs('partner.inquire') ? 'bg-blue-100' : '' }}">Business Partner Inquire</a>
                     </li>
                     <li>    
-                        <a href="#" class="block px-4 py-2 hover:bg-blue-100">Transaction History</a>
+                        <a href="{{route('transaction.history')}}" class="block px-4 py-2 hover:bg-blue-100 {{ request()->routeIs('transaction.history') ? 'bg-blue-100' : '' }}">Transaction History</a>
                     </li>
                     <li>    
                         <a href="#" class="block px-4 py-2 hover:bg-blue-100">CRM</a>

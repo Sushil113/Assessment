@@ -1,5 +1,5 @@
 <header class="bg-white shadow p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">Admin Panel</h1>
+    <h1 class="text-xl font-bold">{{ isset($title) ? $title : 'Admin Panel' }}</h1>
     <div class="flex items-center space-x-10">
         <div class="relative">
             <div
@@ -58,7 +58,7 @@
         const dropdown = button.nextElementSibling;
         const icon = button.querySelector("#dropdown-icon");
         dropdown.classList.toggle("hidden");
-        icon.classList.toggle("rotate-180"); // Rotate arrow icon
+        icon.classList.toggle("rotate-180");
     }
 
     //for setting the language
@@ -67,8 +67,6 @@
             ".flex.items-center.space-x-2 span:nth-child(2)"
         );
         buttonText.textContent = language;
-        document.getElementById("dropdown-menu").classList.add("hidden"); // Close dropdown
+        document.getElementById("dropdown-menu").classList.add("hidden"); 
     }
-
 </script>
-
