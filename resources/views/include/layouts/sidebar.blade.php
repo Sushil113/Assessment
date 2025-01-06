@@ -1,4 +1,4 @@
-<aside class="w-64 bg-white shadow-lg">
+<aside class="w-64 bg-white shadow-lg h-screen">
     <div class="p-4 text-lg font-bold text-blue-500">
         Company Name
     </div>
