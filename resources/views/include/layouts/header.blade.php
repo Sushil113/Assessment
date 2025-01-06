@@ -2,29 +2,23 @@
     <h1 class="text-xl font-bold">{{ isset($title) ? $title : 'Admin Panel' }}</h1>
     <div class="flex items-center space-x-10">
         <div class="relative">
-            <div
-                onclick="toggleDropdown(this)"
-                class="flex items-center space-x-2 rounded border p-2 cursor-pointer">
+            <div onclick="toggleDropdown(this)" class="flex items-center space-x-2 rounded border p-2 cursor-pointer">
                 <span class="material-icons-outlined">language</span>
-                <span>English (US)</span>
-                <span
-                    class="ml-auto material-icons-outlined transition-transform"
-                    id="dropdown-icon">
-                    expand_more
+                <span>
+                    @if(app()->getLocale() === 'en')
+                    {{ __('messages.english_us') }}
+                    @else
+                    {{ __('messages.japanese_jpn') }}
+                    @endif
                 </span>
+                <span class="ml-auto material-icons-outlined transition-transform" id="dropdown-icon">expand_more</span>
             </div>
-            <ul
-                id="dropdown-menu"
-                class="absolute hidden mt-2 w-full bg-white border rounded shadow-lg text-gray-700">
-                <li
-                    class="px-4 py-2 hover:bg-blue-100 cursor-pointer"
-                    onclick="setLanguage('English (US)')">
-                    English (US)
+            <ul id="dropdown-menu" class="absolute hidden mt-2 w-full bg-white border rounded shadow-lg text-gray-700">
+                <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer">
+                    <a href="{{ url('set-language/en') }}">{{ __('messages.english_us') }}</a>
                 </li>
-                <li
-                    class="px-4 py-2 hover:bg-blue-100 cursor-pointer"
-                    onclick="setLanguage('Japanese (JPN)')">
-                    Japanese (JPN)
+                <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer">
+                    <a href="{{ url('set-language/jp') }}">{{ __('messages.japanese_jpn') }}</a>
                 </li>
             </ul>
         </div>
@@ -46,8 +40,8 @@
             <ul
                 id="profile-dropdown"
                 class="absolute hidden right-0 mt-2 w-40 bg-white border rounded shadow-lg text-gray-700">
-                <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer">Profile</li>
-                <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer">Logout</li>
+                <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer">{{ __('messages.profile') }}</li>
+                <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer">{{ __('messages.logout') }}</li>
             </ul>
         </div>
     </div>
@@ -67,6 +61,6 @@
             ".flex.items-center.space-x-2 span:nth-child(2)"
         );
         buttonText.textContent = language;
-        document.getElementById("dropdown-menu").classList.add("hidden"); 
+        document.getElementById("dropdown-menu").classList.add("hidden");
     }
 </script>

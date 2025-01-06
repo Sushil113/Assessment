@@ -15,7 +15,7 @@
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-lg font-semibold text-gray-700">Toyota Motor Corp</h1>
         <div class="border rounded px-4 py-2 flex items-center text-gray-600 cursor-pointer">
-            <span>Filter by Date</span>
+            <span>{{ __('messages.filter') }}</span>
             <span class="material-icons-outlined ml-2">expand_more</span>
         </div>
     </div>
@@ -26,12 +26,12 @@
     <!-- title for different types of transactions -->
     <div class="mt-6 mb-4 border-b border-gray-200">
         <nav class="flex space-x-8">
-            <a href="#" class="text-blue-500 border-b-2 border-blue-500 pb-2 font-medium">All Types</a>
-            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">Invoice</a>
-            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">Estimate</a>
-            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">Delivery Slip</a>
-            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">Receipt</a>
-            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">Contract</a>
+            <a href="#" class="text-blue-500 border-b-2 border-blue-500 pb-2 font-medium">{{ __('messages.all_type') }}</a>
+            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">{{ __('messages.invoice') }}</a>
+            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">{{ __('messages.estimate') }}</a>
+            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">{{ __('messages.delivery_slip') }}</a>
+            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">{{ __('messages.receipt') }}</a>
+            <a href="#" class="text-gray-600 hover:text-blue-500 pb-2">{{ __('messages.contract') }}</a>
         </nav>
     </div>
 
@@ -40,13 +40,13 @@
         <table class="min-w-full bg-white divide-y divide-gray-200">
             <thead>
                 <tr class="bg-gray-50 text-left">
-                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">Sr. No</th>
-                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">Deposit Time</th>
-                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">Amount</th>
-                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">Deposit Date</th>
-                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">Billing Amount</th>
-                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">Status</th>
-                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">Action</th>
+                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">{{ __('messages.sr_no') }}</th>
+                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">{{ __('messages.deposit_time') }}</th>
+                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">{{ __('messages.amount') }}</th>
+                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">{{ __('messages.deposit_date') }}</th>
+                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">{{ __('messages.billing_amount') }}</th>
+                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">{{ __('messages.status') }}</th>
+                    <th class="px-4 py-3 text-sm font-semibold text-gray-600">{{ __('messages.action') }}</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
@@ -57,7 +57,7 @@
                     <td class="px-4 py-3 text-sm text-gray-700">2024/12/25</td>
                     <td class="px-4 py-3 text-sm text-gray-700">¥ 23,000,000</td>
                     <td class="px-4 py-3 text-sm">
-                        <span class="px-2 py-1 text-green-800 bg-green-100 rounded-full">Paid</span>
+                        <span class="px-2 py-1 text-green-800 bg-green-100 rounded-full">{{ __('messages.paid') }}</span>
                     </td>
                     <td class="px-4 py-3 text-sm">
                         <div class="flex space-x-2">
@@ -87,7 +87,7 @@
                     <td class="px-4 py-3 text-sm text-gray-700">2024/12/25</td>
                     <td class="px-4 py-3 text-sm text-gray-700">¥ 23,000,000</td>
                     <td class="px-4 py-3 text-sm">
-                        <span class="px-2 py-1 text-green-800 bg-green-100 rounded-full">Paid</span>
+                        <span class="px-2 py-1 text-green-800 bg-green-100 rounded-full">{{ __('messages.paid') }}</span>
                     </td>
                     <td class="px-4 py-3 text-sm">
                         <div class="flex space-x-2">
@@ -117,7 +117,7 @@
                     <td class="px-4 py-3 text-sm text-gray-700">2024/12/25</td>
                     <td class="px-4 py-3 text-sm text-gray-700">¥ 23,000,000</td>
                     <td class="px-4 py-3 text-sm">
-                        <span class="px-2 py-1 text-red-800 bg-red-100 rounded-full">Unpaid</span>
+                        <span class="px-2 py-1 text-red-800 bg-red-100 rounded-full">{{ __('messages.unpaid') }}</span>
                     </td>
                     <td class="px-4 py-3 text-sm">
                         <div class="flex space-x-2">
@@ -147,7 +147,7 @@
                     <td class="px-4 py-3 text-sm text-gray-700">2024/12/25</td>
                     <td class="px-4 py-3 text-sm text-gray-700">¥ 23,000,000</td>
                     <td class="px-4 py-3 text-sm">
-                        <span class="px-2 py-1 text-green-800 bg-green-100 rounded-full">Paid</span>
+                        <span class="px-2 py-1 text-green-800 bg-green-100 rounded-full">{{ __('messages.paid') }}</span>
                     </td>
                     <td class="px-4 py-3 text-sm">
                         <div class="flex space-x-2">
@@ -177,7 +177,7 @@
                     <td class="px-4 py-3 text-sm text-gray-700">2024/12/25</td>
                     <td class="px-4 py-3 text-sm text-gray-700">¥ 23,000,000</td>
                     <td class="px-4 py-3 text-sm">
-                        <span class="px-2 py-1 text-red-800 bg-red-100 rounded-full">Unpaid</span>
+                        <span class="px-2 py-1 text-red-800 bg-red-100 rounded-full">{{ __('messages.unpaid') }}</span>
                     </td>
                     <td class="px-4 py-3 text-sm">
                         <div class="flex space-x-2">
@@ -208,7 +208,7 @@
 <!-- pagination div -->
 <div class="flex items-center justify-between p-4">
     <div class="flex items-center space-x-2">
-        <label for="rows-per-page" class="text-gray-500 text-sm">Rows per page</label>
+        <label for="rows-per-page" class="text-gray-500 text-sm">{{ __('messages.row_per_page') }}</label>
         <select id="rows-per-page" class="block w-16 p-2 text-sm border rounded-md focus:ring-blue-500 focus:border-blue-500">
             <option>5</option>
             <option>10</option>
@@ -218,7 +218,7 @@
 
     <div class="flex items-center space-x-2">
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100 disabled:opacity-50" disabled>
-            Prev
+            {{ __('messages.previous') }}
         </button>
 
         <button class="px-3 py-2 text-sm text-white bg-blue-500 border rounded-md">1</button>
@@ -227,7 +227,7 @@
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100">11</button>
 
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100">
-            Next
+            {{ __('messages.next') }}
         </button>
     </div>
 </div>

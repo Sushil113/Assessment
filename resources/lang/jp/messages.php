@@ -1,0 +1,57 @@
+<?php
+
+return [
+    'language' => '言語',
+    'english_us' => '英語 (US)',
+    'japanese_jpn' => '日本語 (JPN)',
+    //table headings
+    'sr_no' => '番号',
+    'invoice_number' => '請求書番号',
+    'company_name' => '会社名',
+    'contact_name' => '担当者名',
+    'phone_number' => '電話番号',
+    'action' => 'アクション',
+    'amount' => '金額',
+    'deposit_time' => '預金時間',
+    'deposit_date' => '入金日',
+    'billing_amount' => '請求金額',
+    'status' => 'ステータス',
+    //sidebar title
+    'dashboard' => 'ダッシュボード',
+    'invoice' => '請求書',
+    'supplies' => '消耗品',
+    'company' => '会社概要',
+    'contact_person' => '担当者',
+    //sublist items
+    'overview' => '概要',
+    'partner _inquire' => 'ビジネスパートナーの問い合わせ',
+    'transaction_history' => '取引履歴',
+    'crm' => 'CRM',
+    'merchandise_catalog' => '商品カタログ',
+    'item' => '項目',
+    //partner inquire page  
+    'open_deals' => 'オープン契約',
+    'pending_deals' => '保留中の契約',
+    'active_partners' => 'アクティブなパートナー',
+    'pending_partners' => '保留中のパートナー',
+    'add_new' => '新規追加',
+    'generate_report' => 'レポート作成',
+    //transaction history page
+    'all_type' => '全タイプ',
+    'estimate' => '見積もり',
+    'delivery_slip' => '納品書',
+    'receipt' => '領収書',
+    'contract' => '契約',
+    //other headings
+    'profile' => 'プロフィール',
+    'logout' => 'ログアウト',
+    'search' => 'キーワードで検索',
+    'filter' => '日付で絞り込む',
+    'row_per_page' => 'ページあたりの行数',
+    'previous' => '前',
+    'next' => '次のページ',
+    'personal_info' => '個人情報',
+    'company_info' => '会社情報',
+    'paid' => '支払い済み',
+    'unpaid' => '未払い',
+];

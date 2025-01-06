@@ -11,14 +11,14 @@
     <!-- report section   -->
     <div class="flex space-x-4">
         <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-            + Add New
+            + {{ __('messages.add_new') }}
         </button>
 
         <button class="bg-white border border-blue-500 text-blue-500 font-bold py-2 px-4 rounded hover:bg-blue-100 flex items-center">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
                 <path d="M11.6893 2.24L10.8727 1.33334H4.44133C3.97733 1.33334 3.798 1.67734 3.798 1.946V4.366H4.7V2.43534C4.7 2.33267 4.78667 2.246 4.88667 2.246H9.48867C9.59 2.246 9.64067 2.264 9.64067 2.34734V5.56067H12.916C13.0447 5.56067 13.0947 5.62734 13.0947 5.72467V13.5713C13.0947 13.7353 13.028 13.76 12.928 13.76H4.88667C4.83708 13.7588 4.7899 13.7384 4.75507 13.7031C4.72025 13.6677 4.7005 13.6203 4.7 13.5707V12.8533H3.804V13.9833C3.792 14.3833 4.00533 14.6667 4.44133 14.6667H13.3733C13.84 14.6667 13.9993 14.3287 13.9993 14.0207V4.79134L13.766 4.538L11.6893 2.24ZM10.5573 2.34667L10.8153 2.636L12.546 4.538L12.6413 4.65334H10.8727C10.7393 4.65334 10.6549 4.63111 10.6193 4.58667C10.5838 4.54311 10.5631 4.47356 10.5573 4.378V2.34667ZM9.83067 8.44467H12.882V9.334H9.83L9.83067 8.44467ZM9.83067 6.66734H12.882V7.556H9.83L9.83067 6.66734ZM9.83067 10.2227H12.882V11.112H9.83L9.83067 10.2227ZM2 5.084V12.1953H8.97667V5.084H2ZM5.48867 9.22L5.062 9.872H5.48867V10.6667H3.344L4.9 8.32667L3.52133 6.22267H4.67333L5.48933 7.44667L6.30467 6.22267H7.456L6.07467 8.32667L7.63267 10.6667H6.43733L5.48867 9.22Z" fill="#5BAAEB" />
             </svg>
-            Generate Report
+            {{ __('messages.generate_report') }}
         </button>
 
     </div>
@@ -35,7 +35,7 @@
 
         </div>
         <div class="ml-4">
-            <div class="text-gray-500">Open Deals</div>
+            <div class="text-gray-500"> <span>{{ __('messages.open_deals') }}</span></div>
             <div class="text-lg font-semibold">1000</div>
         </div>
     </div>
@@ -49,7 +49,7 @@
             </svg>
         </div>
         <div class="ml-4">
-            <div class="text-gray-500">Pending Deals</div>
+            <div class="text-gray-500">{{ __('messages.pending_deals') }}</div>
             <div class="text-lg font-semibold">50</div>
         </div>
     </div>
@@ -62,7 +62,7 @@
             </svg>
         </div>
         <div class="ml-4">
-            <div class="text-gray-500">Active Partners</div>
+            <div class="text-gray-500">{{ __('messages.active_partners') }}</div>
             <div class="text-lg font-semibold">180</div>
         </div>
     </div>
@@ -76,7 +76,7 @@
             </svg>
         </div>
         <div class="ml-4">
-            <div class="text-gray-500">Pending Partners</div>
+            <div class="text-gray-500">{{ __('messages.pending_partners') }}</div>
             <div class="text-lg font-semibold">72</div>
         </div>
     </div>
@@ -87,13 +87,13 @@
     <div class="flex items-center border rounded px-3 py-2 w-80">
         <input
             type="text"
-            placeholder="Search by keywords"
+            placeholder="{{ __('messages.search') }}"
             class="w-full border-none outline-none text-gray-600" />
         <span class="material-icons-outlined text-gray-400">search</span>
     </div>
 
     <div class="border rounded px-4 py-2 flex items-center text-gray-600 cursor-pointer">
-        <span>Filter by Date</span>
+        <span>{{ __('messages.filter') }}</span>
         <span class="material-icons-outlined ml-2">expand_more</span>
     </div>
 </div>
@@ -103,12 +103,12 @@
     <table class="w-full text-left border-collapse">
         <thead>
             <tr class="border-b">
-                <th class="p-2">Sr. No</th>
-                <th class="p-2">Invoice Number</th>
-                <th class="p-2">Company Name</th>
-                <th class="p-2">Contact Name</th>
-                <th class="p-2">Phone Number</th>
-                <th class="p-2">Action</th>
+                <th class="p-2">{{ __('messages.sr_no') }}</th>
+                <th class="p-2">{{ __('messages.invoice_number') }}</th>
+                <th class="p-2">{{ __('messages.company_name') }}</th>
+                <th class="p-2">{{ __('messages.contact_name') }}</th>
+                <th class="p-2">{{ __('messages.phone_number') }}</th>
+                <th class="p-2">{{ __('messages.action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -244,7 +244,7 @@
 <!-- pagination div -->
 <div class="flex items-center justify-between p-4">
     <div class="flex items-center space-x-2">
-        <label for="rows-per-page" class="text-gray-500 text-sm">Rows per page</label>
+        <label for="rows-per-page" class="text-gray-500 text-sm">{{ __('messages.row_per_page') }}</label>
         <select id="rows-per-page" class="block w-16 p-2 text-sm border rounded-md focus:ring-blue-500 focus:border-blue-500">
             <option>5</option>
             <option>10</option>
@@ -254,7 +254,7 @@
 
     <div class="flex items-center space-x-2">
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100 disabled:opacity-50" disabled>
-            Prev
+        {{ __('messages.previous') }}
         </button>
 
         <button class="px-3 py-2 text-sm text-white bg-blue-500 border rounded-md">1</button>
@@ -263,7 +263,7 @@
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100">11</button>
 
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100">
-            Next
+        {{ __('messages.next') }}
         </button>
     </div>
 </div>

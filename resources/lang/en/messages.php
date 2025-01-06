@@ -1,0 +1,57 @@
+<?php
+
+return [
+    'language' => 'Language',
+    'english_us' => 'English (US)',
+    'japanese_jpn' => 'Japanese (JPN)', 
+    //table headings
+    'sr_no' => 'Sr. No',
+    'invoice_number' => 'Invoice Number',
+    'company_name' => 'Company Name',
+    'contact_name' => 'Contact Name',
+    'phone_number' => 'Phone Number',
+    'action' => 'Action',
+    'amount' => 'Amount',
+    'deposit_time' => 'Deposit Time',
+    'deposit_date' => 'Deposit Date',
+    'billing_amount' => 'Billing Amount',
+    'status' => 'Status',
+    //sidebar title
+    'dashboard' => 'DashBoard',
+    'invoice' => 'Invoice',
+    'supplies' => 'Supplies',
+    'company' => 'Company', 
+    'contact_person' => 'Contact Person',
+    //sublist items
+    'overview' => 'Overview',
+    'partner _inquire' => 'Business Partner Inquire',
+    'transaction_history' => 'Transaction History',
+    'crm' => 'CRM',
+    'merchandise_catalog' => 'Merchandise Catalog',
+    'item' => 'Item',
+    //partner inquire page  
+    'open_deals' => 'Open Deals',
+    'pending_deals' => 'Pending Deals',
+    'active_partners' => 'Active Partners',
+    'pending_partners' => 'Pending Partners',
+    'add_new' => 'Add New',
+    'generate_report' => 'Generate Report',
+    //transaction history page
+    'all_type' => 'All Type',
+    'estimate' => 'Estimate',
+    'delivery_slip' => 'Delivery Slip',
+    'receipt' => 'Receipt',
+    'contract' => 'Contract',
+    //other headings
+    'profile' => 'Profile',
+    'logout' => 'Logout',
+    'search' => 'Search by Keywords',
+    'filter' => 'Filter by Date',
+    'row_per_page' => 'Row per page',
+    'previous' => 'prev',
+    'next' => 'next',
+    'personal_info' => 'Personal Information',   
+    'company_info' => 'Company Information', 
+    'paid' => 'Paid',
+    'unpaid' => 'Unpaid',
+];

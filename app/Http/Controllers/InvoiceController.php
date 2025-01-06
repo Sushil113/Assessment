@@ -9,11 +9,11 @@ class InvoiceController extends Controller
     public function showPartnerInquire()
     {
         $breadcrumbs = [
-            'Invoice' => route('partner.inquire'),
-            'Business Partner Inquire' => '',
+            __('messages.invoice') => route('partner.inquire'),
+            __('messages.partner _inquire') => '',
         ];
 
-        $title = 'Invoice';
+        $title = __('messages.invoice');
 
         return view('partner_inquire', compact('breadcrumbs', 'title'));
     }
@@ -21,11 +21,11 @@ class InvoiceController extends Controller
     public function showTransactionHistory()
     {
         $breadcrumbs = [
-            'Invoice' => route('transaction.history'),
-            'Transaction History' => '',  
+            __('messages.invoice') => route('transaction.history'),
+            __('messages.transaction_history') => '',
         ];
 
-        $title = 'Invoice'; 
+        $title = __('messages.invoice');
 
         return view('transaction_history', compact('breadcrumbs','title'));
     }
