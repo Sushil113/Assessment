@@ -1,5 +1,5 @@
-<!-- Modal Structure -->
-<div id="myModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+<!-- Personal info Modal-->
+<div id="personalInfoModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg w-2/3 max-w-lg">
         <div class="p-6">
             <div class="flex justify-between items-center border-b pb-4">
@@ -77,7 +77,7 @@
                         </svg>
                     </a>
                 </div>
-                <button id="closeModal" class="self-start text-gray-500 hover:text-gray-800">
+                <button id="closePersonalInfo" class="self-start text-gray-500 hover:text-gray-800">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6666 12.6667L3.33325 3.33334M12.6666 3.33334L3.33325 12.6667" stroke="#252525" stroke-width="1.25" stroke-linecap="round" />
                     </svg>
@@ -143,5 +143,31 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Report Modal -->
+<div id="reportModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+    <div class="relative p-8 bg-white w-full max-w-md m-auto flex-col flex">
+        <h2 class="text-lg font-bold mb-4">{{ __('messages.generate_report') }}</h2>
+
+        <label for="languages" class="mb-2"> {{ __('messages.select_language') }}:</label>
+        <select id="languages" class="mb-4 p-2 border">
+            <option value="en"> {{ __('messages.english_us') }}</option>
+            <option value="jp"> {{ __('messages.japanese_jpn') }}</option>
+        </select>
+
+        <label for="format" class="mb-2"> {{ __('messages.select_format') }}:</label>
+        <select id="format" class="mb-8 p-2 border">
+            <option value="pdf">PDF</option>
+        </select>
+
+        <button id="generateReport" class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> {{ __('messages.ok') }}</button>
+
+        <button class="absolute top-0 right-0 mt-4 mr-4 text-gray-500" id="closeReportModal">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6666 12.6667L3.33325 3.33334M12.6666 3.33334L3.33325 12.6667" stroke="#252525" stroke-width="1.25" stroke-linecap="round" />
+            </svg>
+        </button>
     </div>
 </div>
