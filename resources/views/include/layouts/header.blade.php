@@ -2,25 +2,13 @@
     <h1 class="text-xl font-bold">{{ isset($title) ? $title : 'Admin Panel' }}</h1>
     <div class="flex items-center space-x-10">
         <div class="relative">
-            <div onclick="toggleDropdown(this)" class="flex items-center space-x-2 rounded border p-2 cursor-pointer">
+            <div class="flex items-center space-x-2 rounded border p-2 cursor-pointer">
                 <span class="material-icons-outlined">language</span>
-                <span>
-                    @if(app()->getLocale() === 'en')
-                    {{ __('messages.english_us') }}
-                    @else
-                    {{ __('messages.japanese_jpn') }}
-                    @endif
-                </span>
-                <span class="ml-auto material-icons-outlined transition-transform" id="dropdown-icon">expand_more</span>
+                <select id="language" class="p-2 " onchange="setLanguage(this.value)">
+                    <option value="en" {{ app()->getLocale() === 'en' ? 'selected' : '' }}>{{ __('messages.english_us') }}</option>
+                    <option value="jp" {{ app()->getLocale() === 'jp' ? 'selected' : '' }}>{{ __('messages.japanese_jpn') }}</option>
+                </select>
             </div>
-            <ul id="dropdown-menu" class="absolute hidden mt-2 w-full bg-white border rounded shadow-lg text-gray-700">
-                <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer">
-                    <a href="{{ url('set-language/en') }}">{{ __('messages.english_us') }}</a>
-                </li>
-                <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer">
-                    <a href="{{ url('set-language/jp') }}">{{ __('messages.japanese_jpn') }}</a>
-                </li>
-            </ul>
         </div>
 
         <div class="relative">
@@ -57,10 +45,6 @@
 
     //for setting the language
     function setLanguage(language) {
-        const buttonText = document.querySelector(
-            ".flex.items-center.space-x-2 span:nth-child(2)"
-        );
-        buttonText.textContent = language;
-        document.getElementById("dropdown-menu").classList.add("hidden");
+        window.location.href = `/set-language/${language}`;
     }
 </script>
