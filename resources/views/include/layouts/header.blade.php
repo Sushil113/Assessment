@@ -34,17 +34,3 @@
         </div>
     </div>
 </header>
-
-<script>
-    function toggleDropdown(button) {
-        const dropdown = button.nextElementSibling;
-        const icon = button.querySelector("#dropdown-icon");
-        dropdown.classList.toggle("hidden");
-        icon.classList.toggle("rotate-180");
-    }
-
-    //for setting the language
-    function setLanguage(language) {
-        window.location.href = `/set-language/${language}`;
-    }
-</script>

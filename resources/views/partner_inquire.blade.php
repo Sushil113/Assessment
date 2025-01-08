@@ -14,13 +14,12 @@
             + {{ __('messages.add_new') }}
         </button>
 
-        <button class="bg-white border border-blue-500 text-blue-500 font-bold py-2 px-4 rounded hover:bg-blue-100 flex items-center">
+        <button id="openReportModal" class="bg-white border border-blue-500 text-blue-500 font-bold py-2 px-4 rounded hover:bg-blue-100 flex items-center" data-modal-toggle="reportModal">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
                 <path d="M11.6893 2.24L10.8727 1.33334H4.44133C3.97733 1.33334 3.798 1.67734 3.798 1.946V4.366H4.7V2.43534C4.7 2.33267 4.78667 2.246 4.88667 2.246H9.48867C9.59 2.246 9.64067 2.264 9.64067 2.34734V5.56067H12.916C13.0447 5.56067 13.0947 5.62734 13.0947 5.72467V13.5713C13.0947 13.7353 13.028 13.76 12.928 13.76H4.88667C4.83708 13.7588 4.7899 13.7384 4.75507 13.7031C4.72025 13.6677 4.7005 13.6203 4.7 13.5707V12.8533H3.804V13.9833C3.792 14.3833 4.00533 14.6667 4.44133 14.6667H13.3733C13.84 14.6667 13.9993 14.3287 13.9993 14.0207V4.79134L13.766 4.538L11.6893 2.24ZM10.5573 2.34667L10.8153 2.636L12.546 4.538L12.6413 4.65334H10.8727C10.7393 4.65334 10.6549 4.63111 10.6193 4.58667C10.5838 4.54311 10.5631 4.47356 10.5573 4.378V2.34667ZM9.83067 8.44467H12.882V9.334H9.83L9.83067 8.44467ZM9.83067 6.66734H12.882V7.556H9.83L9.83067 6.66734ZM9.83067 10.2227H12.882V11.112H9.83L9.83067 10.2227ZM2 5.084V12.1953H8.97667V5.084H2ZM5.48867 9.22L5.062 9.872H5.48867V10.6667H3.344L4.9 8.32667L3.52133 6.22267H4.67333L5.48933 7.44667L6.30467 6.22267H7.456L6.07467 8.32667L7.63267 10.6667H6.43733L5.48867 9.22Z" fill="#5BAAEB" />
             </svg>
             {{ __('messages.generate_report') }}
         </button>
-
     </div>
 </div>
 
@@ -130,7 +129,7 @@
                         </svg>
 
                     </button>
-                    <button class="p-2 text-gray-500 hover:text-gray-800" id="openModal">
+                    <button class="p-2 text-gray-500 hover:text-gray-800" id="openPersonalInfo">
                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.99984 8.33334C9.39707 8.33334 8.819 8.56162 8.39278 8.96795C7.96656 9.37427 7.72711 9.92537 7.72711 10.5C7.72711 11.0746 7.96656 11.6257 8.39278 12.0321C8.819 12.4384 9.39707 12.6667 9.99984 12.6667C10.6026 12.6667 11.1807 12.4384 11.6069 12.0321C12.0331 11.6257 12.2726 11.0746 12.2726 10.5C12.2726 9.92537 12.0331 9.37427 11.6069 8.96795C11.1807 8.56162 10.6026 8.33334 9.99984 8.33334ZM9.99984 14.1111C8.99523 14.1111 8.03177 13.7307 7.3214 13.0535C6.61104 12.3762 6.21196 11.4577 6.21196 10.5C6.21196 9.54228 6.61104 8.62378 7.3214 7.94657C8.03177 7.26935 8.99523 6.8889 9.99984 6.8889C11.0044 6.8889 11.9679 7.26935 12.6783 7.94657C13.3886 8.62378 13.7877 9.54228 13.7877 10.5C13.7877 11.4577 13.3886 12.3762 12.6783 13.0535C11.9679 13.7307 11.0044 14.1111 9.99984 14.1111ZM9.99984 5.08334C6.21196 5.08334 2.97711 7.32945 1.6665 10.5C2.97711 13.6706 6.21196 15.9167 9.99984 15.9167C13.7877 15.9167 17.0226 13.6706 18.3332 10.5C17.0226 7.32945 13.7877 5.08334 9.99984 5.08334Z" fill="#8B8B8B" />
                         </svg>
@@ -254,7 +253,7 @@
 
     <div class="flex items-center space-x-2">
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100 disabled:opacity-50" disabled>
-        {{ __('messages.previous') }}
+            {{ __('messages.previous') }}
         </button>
 
         <button class="px-3 py-2 text-sm text-white bg-blue-500 border rounded-md">1</button>
@@ -263,21 +262,14 @@
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100">11</button>
 
         <button class="px-3 py-2 text-sm text-gray-500 bg-white border rounded-md hover:bg-gray-100">
-        {{ __('messages.next') }}
+            {{ __('messages.next') }}
         </button>
     </div>
 </div>
 
+<!-- Modal -->
+
 <!-- modal div -->
 <x-modal></x-modal>
 
-<script>
-    document.getElementById('openModal').addEventListener('click', function() {
-        document.getElementById('myModal').classList.remove('hidden');
-    });
-
-    document.getElementById('closeModal').addEventListener('click', function() {
-        document.getElementById('myModal').classList.add('hidden');
-    });
-</script>
 @endsection

@@ -100,13 +100,3 @@
         </ul>
     </nav>
 </aside>
-
-<script>
-    function toggleMenu(button) {
-        const menu = button.nextElementSibling;
-        const arrow = button.querySelector("span:last-child");
-
-        menu.classList.toggle("hidden");
-        arrow.classList.toggle("rotate-180");
-    }
-</script>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Admin Panel')</title>
     @vite('resources/css/app.css')
+    
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
@@ -13,7 +14,7 @@
 
 <body>
 
-    <div class="flex h-screen bg-gray-100">
+    <div class="flex bg-gray-100">
 
         @include('include.layouts.sidebar')
 
@@ -29,7 +30,7 @@
 
         </div>
     </div>
-
+    <script src="{{ asset('js/custom.js') }}"></script>
 </body>
 
 </html>
