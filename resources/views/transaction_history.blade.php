@@ -206,7 +206,7 @@
 </div>
 
 <!-- pagination div -->
-<div class="flex items-center justify-between p-4">
+<div class="flex items-center justify-between p-4 pb-3">
     <div class="flex items-center space-x-2">
         <label for="rows-per-page" class="text-gray-500 text-sm">{{ __('messages.row_per_page') }}</label>
         <select id="rows-per-page" class="block w-16 p-2 text-sm border rounded-md focus:ring-blue-500 focus:border-blue-500">

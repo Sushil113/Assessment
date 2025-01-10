@@ -241,7 +241,7 @@
 </div>
 
 <!-- pagination div -->
-<div class="flex items-center justify-between p-4">
+<div class="flex items-center justify-between p-4 pb-3">
     <div class="flex items-center space-x-2">
         <label for="rows-per-page" class="text-gray-500 text-sm">{{ __('messages.row_per_page') }}</label>
         <select id="rows-per-page" class="block w-16 p-2 text-sm border rounded-md focus:ring-blue-500 focus:border-blue-500">
@@ -271,5 +271,36 @@
 
 <!-- modal div -->
 <x-modal></x-modal>
+
+<script>
+    document.getElementById('generateReport').addEventListener('click', function() {
+        const language = document.getElementById('languages').value;
+        const format = document.getElementById('format').value;
+
+        fetch('/generate-report', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({
+                    language,
+                    format
+                })
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'report.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.getElementById('reportModal').classList.toggle('hidden');
+            });
+    });
+</script>
 
 @endsection
