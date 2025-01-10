@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -27,6 +28,23 @@ class InvoiceController extends Controller
 
         $title = __('messages.invoice');
 
-        return view('transaction_history', compact('breadcrumbs','title'));
+        return view('transaction_history', compact('breadcrumbs', 'title'));
+    }
+
+    //for generating report
+    public function generateReport(Request $request)
+    {
+        $language = $request->input('language');
+        $format = $request->input('format');
+
+        app()->setLocale($language); 
+        
+        $data = [ 'title' => __('messages.invoice_report')];
+
+        $pdf = PDF::loadView('report.invoice_report', $data);
+
+        $filename = __('messages.invoice_report') . '.' . $format;
+        
+        return $pdf->download($filename);
     }
 }
