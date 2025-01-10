@@ -33,33 +33,3 @@ document.getElementById('openReportModal').addEventListener('click', function() 
 document.getElementById('closeReportModal').addEventListener('click', function() {
     document.getElementById('reportModal').classList.add('hidden');
 });
-
-
-document.getElementById('generateReport').addEventListener('click', function() {
-    const language = document.getElementById('languages').value;
-    const format = document.getElementById('format').value;
-
-    fetch('/generate-report', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            body: JSON.stringify({
-                language,
-                format
-            })
-        })
-        .then(response => response.blob())
-        .then(blob => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = url;
-            a.download = 'report.pdf';
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            document.getElementById('reportModal').classList.toggle('hidden');
-        });
-});
