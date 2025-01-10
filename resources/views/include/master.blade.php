@@ -22,11 +22,9 @@
 
             @include('include.layouts.header')
 
-            <main class="flex-1 p-6">
+            <main class="flex-1 p-6 pb-0">
                 @yield('content')
             </main>
-
-            @include('include.layouts.footer')
 
         </div>
     </div>
