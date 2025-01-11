@@ -272,7 +272,7 @@
 <!-- modal div -->
 <x-modal></x-modal>
 
-<script>
+<!-- <script>
     document.getElementById('generateReport').addEventListener('click', function() {
         const language = document.getElementById('languages').value;
         const format = document.getElementById('format').value;
@@ -301,6 +301,6 @@
                 document.getElementById('reportModal').classList.toggle('hidden');
             });
     });
-</script>
+</script> -->
 
 @endsection

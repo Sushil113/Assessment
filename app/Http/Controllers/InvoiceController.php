@@ -34,17 +34,22 @@ class InvoiceController extends Controller
     //for generating report
     public function generateReport(Request $request)
     {
-        $language = $request->input('language');
-        $format = $request->input('format');
+        $validatedData = $request->validate([
+            'languages' => ['required', 'in:en,jp'], 
+            'formats' => ['required', 'in:pdf'],    
+        ]);
 
-        app()->setLocale($language); 
-        
-        $data = [ 'title' => __('messages.invoice_report')];
+        $language = $validatedData['languages'];
+        $format = $validatedData['formats'];
+
+        app()->setLocale($language);
+
+        $data = ['title' => __('messages.invoice_report')];
 
         $pdf = PDF::loadView('report.invoice_report', $data);
 
         $filename = __('messages.invoice_report') . '.' . $format;
-        
+
         return $pdf->download($filename);
     }
 }

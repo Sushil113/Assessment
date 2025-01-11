@@ -146,28 +146,41 @@
     </div>
 </div>
 
-<!-- Report Modal -->
-<div id="reportModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
-    <div class="relative p-8 bg-white w-full max-w-md m-auto flex-col flex">
-        <h2 class="text-lg font-bold mb-4">{{ __('messages.generate_report') }}</h2>
 
-        <label for="languages" class="mb-2"> {{ __('messages.select_language') }}:</label>
-        <select id="languages" class="mb-4 p-2 border">
-            <option value="en"> {{ __('messages.english_us') }}</option>
-            <option value="jp"> {{ __('messages.japanese_jpn') }}</option>
-        </select>
-
-        <label for="format" class="mb-2"> {{ __('messages.select_format') }}:</label>
-        <select id="format" class="mb-8 p-2 border">
-            <option value="pdf">PDF</option>
-        </select>
-
-        <button id="generateReport" class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> {{ __('messages.ok') }}</button>
-
-        <button class="absolute top-0 right-0 mt-4 mr-4 text-gray-500" id="closeReportModal">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.6666 12.6667L3.33325 3.33334M12.6666 3.33334L3.33325 12.6667" stroke="#252525" stroke-width="1.25" stroke-linecap="round" />
-            </svg>
-        </button>
+<div id="reportModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+    <div class="relative p-8 bg-white w-full max-w-lg rounded-lg shadow-lg">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800">{{ __('messages.generate_report') }}</h2>
+            <button class="text-gray-500 hover:text-gray-800" id="closeReportModal" aria-label="Close Modal">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+        <form action="{{ route('generate.report') }}" method="post" class="space-y-6">
+            @csrf
+            <div>
+                <label for="languages" class="block text-sm font-medium text-gray-700 mb-1">
+                    {{ __('messages.select_language') }}
+                </label>
+                <select id="languages" name="languages" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option value="en">{{ __('messages.english_us') }}</option>
+                    <option value="jp">{{ __('messages.japanese_jpn') }}</option>
+                </select>
+            </div>
+            <div>
+                <label for="format" class="block text-sm font-medium text-gray-700 mb-1">
+                    {{ __('messages.select_format') }}
+                </label>
+                <select id="formats" name="formats" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option value="pdf">PDF</option>
+                </select>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" id="generateReport" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded-lg text-lg focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    {{ __('messages.ok') }}
+                </button>
+            </div>
+        </form>
     </div>
 </div>
