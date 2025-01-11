@@ -1,5 +1,5 @@
-# Installation Guide
-If you encounter any errors during installation, try the following steps:
+# Project Setup Guide
+To set up and run the project, please follow the instructions below:
 
 ## 1. Clone the Repository
 ```bash
@@ -12,13 +12,12 @@ cd <project-directory>
 ```
 ## 2. Install Dependencies
 Run the following commands to install the necessary dependencies:
-
 ```bash
 composer install
 npm install
 npm run build
 ```
-## 2. Set Up Configuration
+## 3. Set Up Configuration
 copy example.env and example.env to .env
 Update the following database settings in the .env file:
 
@@ -31,7 +30,13 @@ DB_USERNAME=<username>
 DB_PASSWORD=<password>
 ```
 
-### 4. Set Up the Database
+## 4. Generate Application Key
+Run the following command to generate an application key:
+```bash
+php artisan key:generate
+```
+
+## 5. Set Up the Database
 Migrate the database:
 ```bash
 php artisan migrate:fresh
@@ -40,7 +45,7 @@ Seed the database:
 ```bash
 php artisan db:seed
 ```
-### 5. Start the Application
+## 6. Start the Application
 Serve the application locally using:
 
 ```bash
