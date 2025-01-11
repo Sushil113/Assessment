@@ -57,6 +57,7 @@ return [
     'select_language' => 'Select Language',
     'select_format' => 'Select Format',
     'ok' => 'OK',
+    'admin_panel' => 'Admin Panel',
     //pdf report
     'invoice_report' => 'Invoice Report',
     'customer_code' => 'Customer code No.',

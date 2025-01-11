@@ -1,5 +1,5 @@
 <header class="bg-white shadow p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">{{ isset($title) ? $title : 'Admin Panel' }}</h1>
+    <h1 class="text-xl font-bold">{{ isset($title) ? $title : __('messages.admin_panel') }}</h1>
     <div class="flex items-center space-x-10">
         <div class="relative">
             <div class="flex items-center space-x-2 rounded border p-2 cursor-pointer">

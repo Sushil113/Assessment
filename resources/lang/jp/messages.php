@@ -57,6 +57,7 @@ return [
     'select_language' => '言語選択',
     'select_format' => 'フォーマットを選択',
     'ok' => 'よし',
+    'admin_panel' => '管理パネル',
     //pdf report
     'invoice_report' => '請求書レポート',
     'customer_code' => '顧客コード番号',
