@@ -16,7 +16,9 @@ class InvoiceController extends Controller
 
         $title = __('messages.invoice');
 
-        return view('partner_inquire', compact('breadcrumbs', 'title'));
+        $partnerData = \App\Models\PartnerInquire::take(5)->get();
+
+        return view('partner_inquire', compact('breadcrumbs', 'title', 'partnerData'));
     }
 
     public function showTransactionHistory()
@@ -28,7 +30,9 @@ class InvoiceController extends Controller
 
         $title = __('messages.invoice');
 
-        return view('transaction_history', compact('breadcrumbs', 'title'));
+        $transactionData = \App\Models\TransactionHistory::take(5)->get();
+
+        return view('transaction_history', compact('breadcrumbs', 'title', 'transactionData'));
     }
 
     //for generating report

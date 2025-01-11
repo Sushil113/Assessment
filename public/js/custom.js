@@ -18,8 +18,10 @@ function setLanguage(language) {
     window.location.href = `/set-language/${language}`;
 }
 
-document.getElementById('openPersonalInfo').addEventListener('click', function() {
-    document.getElementById('personalInfoModal').classList.remove('hidden');
+document.querySelectorAll('.openPersonalInfo').forEach(button => {
+    button.addEventListener('click', function() {
+        document.getElementById('personalInfoModal').classList.remove('hidden');
+    });
 });
 
 document.getElementById('closePersonalInfo').addEventListener('click', function() {
