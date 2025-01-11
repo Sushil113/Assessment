@@ -56,7 +56,7 @@ return [
     'unpaid' => 'Unpaid',
     'select_language' => 'Select Language',
     'select_format' => 'Select Format',
-    'ok' => 'Ok',
+    'ok' => 'OK',
     //pdf report
     'invoice_report' => 'Invoice Report',
     'customer_code' => 'Customer code No.',
