@@ -138,7 +138,7 @@
       <div class="invoice-header">
         <div class="left">
           <p>{{ __('messages.customer_code') }}: <strong>A-8</strong></p>
-          <p>{{ __('messages.date') }}: <strong>July 31, 2023</strong></p>
+          <p>{{ __('messages.date') }}: <strong>{{ \Carbon\Carbon::now()->format('F j, Y') }}</strong></p>
         </div>
       </div>
 
